@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NextPage, GetServerSideProps } from "next";
 
 type CatCategory = {
@@ -57,7 +57,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ initialCatImageUrl }) => {
   )
 };
 
-export const GetServerSideProps: GetServerSideProps<IndexPageProps> = async () => {
+const GetServerSideProps: GetServerSideProps<IndexPageProps> = async () => {
   const catImage = await fetchCatImage()
   return {
     props: {
